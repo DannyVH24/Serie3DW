@@ -400,17 +400,29 @@ select {
 }
 
 .filters label span {
-  color: var(--muted);
+  color: #ffdca8;
   font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .filters select {
   appearance: none;
   border-radius: 16px;
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+  color: #f8fbff;
+  font-weight: 600;
   padding: 13px 14px;
+}
+
+.filters select option {
+  color: #122033;
+}
+
+.filters select option[value=""] {
+  color: #4a5a73;
 }
 
 .filters select:focus,
