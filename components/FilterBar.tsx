@@ -14,18 +14,35 @@ export default function FilterBar({
   onSort: (s: 'asc' | 'desc' | null) => void;
 }) {
   return (
-    <div className="filters container">
-      <select value={selected ?? ''} onChange={(e) => onSelect(e.target.value || null)}>
-        <option value="">Todas las categorías</option>
-        {categories.map((c) => (
-          <option key={c} value={c}>{c}</option>
-        ))}
-      </select>
-      <select value={sort ?? ''} onChange={(e) => onSort((e.target.value as any) || null)}>
-        <option value="">Ordenar por precio</option>
-        <option value="asc">Menor a mayor</option>
-        <option value="desc">Mayor a menor</option>
-      </select>
-    </div>
+    <section className="filters">
+      <div className="filters-copy">
+        <span className="eyebrow">Filtrar</span>
+        <h3>Encontrá rápido lo que te interesa.</h3>
+      </div>
+      <div className="filters-controls">
+        <label>
+          <span>Categoría</span>
+          <select value={selected ?? ''} onChange={(e) => onSelect(e.target.value || null)}>
+            <option value="">Todas las categorías</option>
+            {categories.map((c) => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label>
+          <span>Orden</span>
+          <select value={sort ?? ''} onChange={(e) => onSort((e.target.value as 'asc' | 'desc') || null)}>
+            <option value="">Destacados</option>
+            <option value="asc">Menor a mayor</option>
+            <option value="desc">Mayor a menor</option>
+          </select>
+        </label>
+        <button className="ghost-btn" onClick={() => { onSelect(null); onSort(null); }}>
+          Limpiar
+        </button>
+      </div>
+    </section>
   );
 }

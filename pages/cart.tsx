@@ -3,33 +3,53 @@ import { useCart } from '../context/CartContext';
 
 export default function CartPage() {
   const { state, dispatch, total } = useCart();
+
   return (
-    <div className="container" style={{paddingTop:24}}>
-      <h2>Carrito</h2>
-      {state.items.length === 0 && <div>Carrito vacío</div>}
-      {state.items.map((it) => (
-        <div key={it.id} style={{display:'flex',gap:12,alignItems:'center',padding:8,borderBottom:'1px solid #0b1630'}}>
-          <img
-            src={it.image}
-            loading="lazy"
-            onError={(e) => (e.currentTarget as HTMLImageElement).src = '/placeholder.svg'}
-            style={{width:80,height:60,objectFit:'cover',borderRadius:6}}
-          />
-          <div style={{flex:1}}>
-            <div style={{fontWeight:700}}>{it.name}</div>
-            <div style={{color:'#9fb1c7'}}>${it.price.toFixed(2)}</div>
-          </div>
-          <div>
-            <button onClick={() => dispatch({ type: 'DECREASE', id: it.id })}>-</button>
-            <span style={{padding:'0 8px'}}>{it.quantity}</span>
-            <button onClick={() => dispatch({ type: 'INCREASE', id: it.id })}>+</button>
-            <button onClick={() => dispatch({ type: 'REMOVE', id: it.id })}>🗑️</button>
-          </div>
+    <div className="container cart-page">
+      <div className="section-heading cart-page-heading">
+        <div>
+          <span className="eyebrow">Carrito</span>
+          <h1>Revisá tu compra antes de finalizar.</h1>
         </div>
-      ))}
-      <div style={{display:'flex',justifyContent:'space-between',marginTop:16}}>
-        <div>Total a pagar</div>
-        <div style={{fontWeight:800}}>${total.toFixed(2)}</div>
+        <p>Un resumen más claro, con totales visibles y controles rápidos para ajustar cantidades.</p>
+      </div>
+
+      <div className="cart-page-layout">
+        <section className="cart-list">
+          {state.items.length === 0 && <div className="empty-state">Carrito vacío</div>}
+
+          {state.items.map((it) => (
+            <article className="cart-item cart-item-page" key={it.id}>
+              <img
+                src={it.image}
+                alt={it.name}
+                loading="lazy"
+                onError={(e) => (e.currentTarget as HTMLImageElement).src = '/placeholder.svg'}
+              />
+              <div className="cart-item-copy">
+                <strong>{it.name}</strong>
+                <span>{it.category}</span>
+                <span>${it.price.toFixed(2)}</span>
+              </div>
+              <div className="qty-controls">
+                <button onClick={() => dispatch({ type: 'DECREASE', id: it.id })}>-</button>
+                <span>{it.quantity}</span>
+                <button onClick={() => dispatch({ type: 'INCREASE', id: it.id })}>+</button>
+                <button className="remove-btn" onClick={() => dispatch({ type: 'REMOVE', id: it.id })}>
+                  Eliminar
+                </button>
+              </div>
+            </article>
+          ))}
+        </section>
+
+        <aside className="checkout-card">
+          <span className="eyebrow">Resumen</span>
+          <h2>Total a pagar</h2>
+          <div className="checkout-total">${total.toFixed(2)}</div>
+          <p>Incluye seguimiento de tu orden, empaquetado seguro y soporte de compra.</p>
+          <button className="cart-btn">Proceder al pago</button>
+        </aside>
       </div>
     </div>
   );

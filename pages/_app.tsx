@@ -7,13 +7,16 @@ import React, { useState } from 'react';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [open, setOpen] = useState(false);
+
   return (
     <CartProvider>
-      <Header onCartOpen={() => setOpen(true)} />
-      <CartDrawer open={open} onClose={() => setOpen(false)} />
-      <main>
-        <Component {...pageProps} />
-      </main>
+      <div className="app-shell">
+        <Header onCartOpen={() => setOpen(true)} />
+        <CartDrawer open={open} onClose={() => setOpen(false)} />
+        <main className="site-main">
+          <Component {...pageProps} />
+        </main>
+      </div>
     </CartProvider>
   );
 }
