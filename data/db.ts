@@ -13,7 +13,7 @@ export const products: Product[] = [
     name: 'NVIDIA GeForce RTX 4070',
     category: 'Componentes',
     price: 799.99,
-    image: '/images/gpu.svg',
+    image: '/images/gpu.jpg',
     description: '10GB GDDR6X, PCIe 4.0, Ray Tracing'
   },
   {
@@ -21,7 +21,7 @@ export const products: Product[] = [
     name: 'AMD Ryzen 7 7800X',
     category: 'Componentes',
     price: 429.99,
-    image: '/images/cpu.svg',
+    image: '/images/cpu.jpg',
     description: '8 núcleos / 16 hilos, 4.5GHz boost'
   },
   {
@@ -29,7 +29,7 @@ export const products: Product[] = [
     name: 'Monitor 27" IPS 144Hz',
     category: 'Monitores',
     price: 289.99,
-    image: '/images/monitor.svg',
+    image: '/images/monitor-27.jpg',
     description: '2560x1440, 144Hz, FreeSync'
   },
   {
@@ -37,7 +37,7 @@ export const products: Product[] = [
     name: 'SSD NVMe 1TB',
     category: 'Componentes',
     price: 119.99,
-    image: '/images/ssd.svg',
+    image: '/images/ssd.jpg',
     description: 'Leitura 3500MB/s, PCIe 3.0'
   },
   {
@@ -45,7 +45,7 @@ export const products: Product[] = [
     name: 'Teclado Mecánico RGB',
     category: 'Periféricos',
     price: 89.99,
-    image: '/images/keyboard.svg',
+    image: '/images/keyboard.jpg',
     description: 'Switches azules, retroiluminación RGB'
   },
   {
@@ -53,7 +53,7 @@ export const products: Product[] = [
     name: 'Mouse Óptico Pro',
     category: 'Periféricos',
     price: 49.99,
-    image: '/images/mouse.svg',
+    image: '/images/mouse.jpg',
     description: '16000 DPI, sensor óptico premium'
   },
   {
@@ -61,7 +61,7 @@ export const products: Product[] = [
     name: 'Monitor 32" Curvo 4K',
     category: 'Monitores',
     price: 799.0,
-    image: '/images/monitor.svg',
+    image: '/images/monitor-32.jpg',
     description: '3840x2160, HDR, 60Hz'
   },
   {
@@ -69,7 +69,7 @@ export const products: Product[] = [
     name: 'Refrigeración Líquida 240mm',
     category: 'Componentes',
     price: 129.99,
-    image: '/images/cooler.svg',
+    image: '/images/cooler.jpg',
     description: 'Radiador 240mm, bomba silenciosa'
   },
   {
@@ -77,7 +77,7 @@ export const products: Product[] = [
     name: 'Auriculares Gamer',
     category: 'Periféricos',
     price: 69.99,
-    image: '/images/headset.svg',
+    image: '/images/headset.jpg',
     description: 'Micrófono, sonido envolvente 7.1'
   }
 ];
