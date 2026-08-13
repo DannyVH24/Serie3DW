@@ -24,8 +24,13 @@ body{
 .card h3{margin:8px 0 4px;font-size:16px}
 .card p{margin:0;color:var(--muted);font-size:13px}
 .card .price{margin-top:auto;font-weight:700}
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
-.filters select,.filters button{padding:8px;border-radius:6px;border:1px solid #1f2a38;background:transparent;color:inherit}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;align-items:center}
+.filters select,.filters button{
+  padding:8px;border-radius:6px;border:1px solid #1f2a38;background:rgba(11,18,32,0.95);color:var(--muted);
+  min-width:180px;
+}
+.filters select:focus,.filters button:focus{outline:2px solid rgba(6,182,212,0.15)}
+.logo-img{height:36px;width:auto;margin-right:8px}
 .cart-btn{background:var(--accent);padding:8px 12px;border-radius:6px;color:#062022;border:none;font-weight:600}
 .cart-drawer{position:fixed;right:0;top:0;height:100%;width:380px;max-width:100%;background:#071226;padding:16px;box-shadow:-20px 0 40px rgba(0,0,0,0.6);transform:translateX(100%);transition:transform .25s ease}
 .cart-drawer.open{transform:translateX(0)}
